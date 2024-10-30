@@ -4,44 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Blogiverse!</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Welcome to Blogiverse!</h1>
+        <div class="hamburger" onclick="toggleSlideOut()">&#9776;</div>
+    </header>
 
-<header>
-    <h1>Welcome to Blogiverse!</h1>
-    <div class="sign-in-up">
-        <button onclick="toggleSlideOut()">Sign In / Sign Up</button>
+    <div class="container">
+        <div class="welcome-info">
+            <h2>Join the Conversation!</h2>
+            <p>Blogiverse is a vibrant community of writers, thinkers, and creatives sharing insights, experiences, and expertise.</p>
+            <h3>What to Expect:</h3>
+            <ul>
+                <li>Original content from talented authors</li>
+                <li>Thought-provoking articles, stories, and opinions</li>
+                <li>Engaging discussions and debates</li>
+                <li>A safe, respectful, and inclusive environment</li>
+            </ul>
+            <h3>Connect with Us:</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="facebook-logo.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="instagram-logo.png" alt="Instagram">
+                </a>
+                <a href="mailto:blogiverse324@gmail.com">
+                    <img src="gmail-logo.png" alt="Gmail">
+                </a>
+            </div>
+            <div class="contact-info">
+                <p>Contact: <a href="mailto:blogiverse324@gmail.com">blogiverse324@gmail.com</a></p>
+            </div>
+        </div>
     </div>
-</header>
 
-<div class="container">
-    <div class="welcome-info">
-        <h2>Join the Conversation!</h2>
-        <p>Blogiverse is a vibrant community of writers, thinkers, and creatives sharing insights, experiences, and expertise.</p>
+    <div class="slide-out" id="slide-out">
+        <span class="close-btn" onclick="toggleSlideOut()">X</span>
+        <h2>Sign In / Sign Up</h2>
+        <p>You will be redirected to the respective page.</p>
+        <button onclick="redirectTo('login.html')">Sign In</button>
+        <button onclick="redirectTo('signup.html')">Sign Up</button>
     </div>
 
-    <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank"><img src="facebook-logo.png" alt="Facebook Logo"></a>
-        <a href="https://www.instagram.com" target="_blank"><img src="instagram-logo.png" alt="Instagram Logo"></a>
-        <a href="mailto:your-email@example.com" target="_blank"><img src="gmail-logo.png" alt="Gmail Logo"></a>
-    </div>
-
-    <div class="contact-info">
-        <p>Contact us at: <a href="mailto:blogiverse324@gmail.com">blogiverse324@gmail.com</a></p>
-    </div>
-</div>
-
-<div class="slide-out" id="slideOut">
-    <span class="close-btn" onclick="toggleSlideOut()">×</span>
-    <h2>Sign In / Sign Up</h2>
-    <p>You will be redirected to the login or sign-up page.</p>
-    <ul>
-        <li><a href="login.html">Sign In</a></li>
-        <li><a href="signup.html">Sign Up</a></li>
-    </ul>
-</div>
-
-<script src="script.js"></script> <!-- Link to JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
