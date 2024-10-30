@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Container styles */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Welcome info styles */
+.welcome-info {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Headings styles */
+.welcome-info h2 {
+    color: white; /* Change heading color to white */
+    background-color: #6a0dad; /* Purple background for headings */
+    padding: 10px; /* Add padding inside the heading box */
+    border-radius: 5px; /* Round the corners */
+}
+
+/* Subheadings styles */
+.welcome-info h3 {
+    color: white; /* Change subheading color to white */
+    background-color: #6a0dad; /* Purple background for subheadings */
+    padding: 5px; /* Add padding inside the subheading box */
+    border-radius: 5px; /* Round the corners */
+}
+
+.post {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    margin-top: 0;
+    color: #ff4500; /* Orange accent color */
+}
+
+.post-meta {8
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.post-preview {
+    color: #444;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.top-right a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Social Links */
+.social-links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #f06, #6a0dad, #0af);
+    background-size: 200% 200%;
+    animation: animate-bg 10s ease infinite;
+    z-index: -1;
+}
+
+@keyframes animate-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    width: 300px;
+    background-color: #6a0dad;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+/* Zendesk Placeholder */
+#zendesk-chat {
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    max-width: 300px;
+}
+/* Additional styles for pop-up, newsletter, etc. (if needed) */
