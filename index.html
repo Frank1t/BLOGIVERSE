@@ -3,39 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogiverse Homepage</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Blog Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .welcome-info {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .welcome-info h2 {
+            color: white;
+            background-color: #6a0dad; /* Purple background for heading */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .welcome-info h3 {
+            color: white;
+            background-color: #6a0dad; /* Purple background for sub-headings */
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .social-icons a {
+            color: #333;
+            font-size: 24px; /* Size of the icons */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Styles for slide-out */
+        .slide-out {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Start hidden */
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .slide-out.active {
+            right: 0; /* Slide in */
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .redirect-btn {
+            background-color: #6a0dad; /* Purple button background */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .redirect-btn:hover {
+            background-color: #5b0b9f; /* Darker purple on hover */
+        }
+
+        .post {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .post h2 {
+            margin: 0 0 10px;
+        }
+
+        .post-meta {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .post-preview {
+            margin: 10px 0;
+        }
+
+        .read-more {
+            color: #6a0dad;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <div class="top-right">
-        <a href="login.html">Sign In</a> | 
-        <a href="signup.html">Sign Up</a>
-    </div>
     <h1>Welcome to Blogiverse!</h1>
+    <button id="toggle-slide" onclick="toggleSlideOut()">Sign In / Sign Up</button>
 </header>
 
-<!-- Social Media Links -->
-<div class="social-links">
-    <a href="https://www.facebook.com/bogiverse.multi.author.blog" target="_blank">Facebook</a> | 
-    <a href="https://www.instagram.com/bogiversem" target="_blank">Instagram</a>
-</div>
-
-<!-- Animated Background -->
-<div class="animated-bg"></div>
-
-<!-- Newsletter Popup -->
-<div id="newsletter-popup" class="popup">
-    <span class="close-btn" onclick="closePopup()">x</span>
-    <h2>Stay Updated!</h2>
-    <p>Would you like to receive the latest notifications via email?</p>
-    <button onclick="showEmailBox()">Yes</button>
-    <div id="email-box" style="display: none;">
-        <input type="email" id="user-email" placeholder="Enter your email">
-        <button onclick="submitEmail()">Send</button>
-    </div>
-</div>
 <div class="container">
     <div class="welcome-info">
         <h2>Join the Conversation!</h2>
@@ -61,26 +175,37 @@
         <p>Blogiverse aims to provide a platform for diverse voices, foster meaningful connections, and inspire creativity.</p>
 
         <h3>Connect with Us:</h3>
-        <ul>
-            <li>Contact: <a href="mailto:blogiverse324@gmail.com">blogiverse324@gmail.com</a></li>
-            <li>Social Media: [Links to social media]</li>
-            <li>Newsletter: [Signup link]</li>
-        </ul>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/bogiverse.multi.author.blog" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/bogiversem?igsh=YTVhaG0yNTJycnVk" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:blogiverse324@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
     </div>
 
-    <!-- Sample Blog Post -->
-    <div class="post">
-        <h2>Post Title 1</h2>
-        <div class="post-meta">Posted on <span>October 30, 2024</span> by <span>Author Name</span></div>
-        <p class="post-preview">This is a short preview of the post content. The full content can be read by clicking on the link below.</p>
-        <a href="post-content.html" class="read-more" onclick="checkLogin(event)">Read More</a>
-    </div>
 
-    <!-- Add more post entries here in the same structure -->
+    <!-- Slide-Out for Sign In / Sign Up -->
+    <div class="slide-out" id="slide-out">
+        <button class="close-btn" onclick="toggleSlideOut()">&times;</button>
+        <h2>Sign In / Sign Up</h2>
+        <a href="login.html" class="redirect-btn">Sign In</a>
+        <a href="signup.html" class="redirect-btn">Sign Up</a>
+    </div>
 </div>
-<!-- Zendesk Widget Placeholder -->
-<div id="zendesk-chat">Zendesk Chat Placeholder</div>
 
-<script src="script.js"></script>
+<script>
+    function checkLogin(event) {
+        const loggedIn = false; // Change this to true if user is logged in
+        if (!loggedIn) {
+            event.preventDefault(); // Prevent default link action
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+    }
+
+    function toggleSlideOut() {
+        const slideOut = document.getElementById('slide-out');
+        slideOut.classList.toggle('active');
+    }
+</script>
+
 </body>
 </html>
