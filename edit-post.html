@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 5px;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+        }
+
+        .submit-btn {
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .back-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Edit Post</h2>
+    <div id="editError" class="error-message" style="display: none;">
+        This post cannot be edited as it was published more than 24 hours ago.
+    </div>
+    <form id="editForm" action="/edit-post" method="POST" enctype="multipart/form-data">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="[Existing Post Title]" required>
+
+        <label for="content">Content</label>
+        <textarea id="content" name="content" rows="10" required>[Existing Post Content]</textarea>
+
+        <label for="tags">Tags (comma separated)</label>
+        <input type="text" id="tags" name="tags" value="[Existing Post Tags]">
+
+        <label for="image">Upload New Image (optional)</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
+        <button type="submit" class="submit-btn">Update Post</button>
+    </form>
+    <div class="back-link">
+        <a href="dashboard.html">Back to Dashboard</a>
+    </div>
+</div>
+
+<script>
+    // Mock data: Replace with actual post data from server
+    const post = {
+        title: "[Existing Post Title]",
+        content: "[Existing Post Content]",
+        tags: "[Existing Post Tags]",
+        createdAt: new Date("2024-10-29T12:00:00Z") // Example post creation date
+    };
+
+    // Get the current time and the post creation time
+    const currentTime = new Date();
+    const postCreatedTime = new Date(post.createdAt);
+
+    // Calculate the time difference in hours
+    const timeDifference = (currentTime - postCreatedTime) / (1000 * 60 * 60); // in hours
+
+    // Check if the post is older than 24 hours
+    if (timeDifference > 24) {
+        document.getElementById('editForm').style.display = 'none'; // Hide the form
+        document.getElementById('editError').style.display = 'block'; // Show the error message
+    }
+</script>
+
+</body>
+</html>
