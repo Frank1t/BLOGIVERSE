@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f5;
+            background-color: #ffffff;
             color: #333;
             margin: 0;
             padding: 0;
@@ -22,13 +22,13 @@
             max-width: 1200px;
             padding: 20px;
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
             text-align: center;
-            color: #333;
+            color: #4a148c; /* Purple accent color */
             font-size: 2em;
             margin-top: 0;
         }
@@ -36,8 +36,9 @@
         .nav-bar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 15px;
-            background-color: #333;
+            background-color: #4a148c;
             color: #fff;
             border-radius: 8px;
         }
@@ -58,8 +59,8 @@
         .box {
             flex: 1;
             min-width: 250px;
-            padding: 15px;
-            background-color: #f9f9f9;
+            padding: 20px;
+            background-color: #f4f4f4;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -67,10 +68,7 @@
         .box h3 {
             font-size: 1.2em;
             margin-bottom: 10px;
-        }
-
-        .create-post, .recent-posts, .categories, .settings, .user-profile {
-            padding: 10px;
+            color: #4a148c;
         }
 
         .post-list, .categories-list {
@@ -81,28 +79,28 @@
         .post-item, .category-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
+            align-items: center;
+            margin-bottom: 10px;
             padding: 10px;
-            background-color: #e0e0e0;
+            background-color: #e8eaf6;
             border-radius: 5px;
         }
 
-        .post-actions, .category-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .post-actions button, .category-actions button, .settings button {
-            padding: 5px 10px;
-            border: none;
-            background-color: #0066cc;
+        .button, .logout-btn {
+            padding: 10px 15px;
             color: #fff;
-            border-radius: 4px;
+            background-color: #4a148c;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+            text-decoration: none;
         }
 
-        .post-actions button:hover, .category-actions button:hover, .settings button:hover {
-            background-color: #005bb5;
+        .button:hover, .logout-btn:hover {
+            background-color: #38006b;
         }
 
         .user-info {
@@ -118,27 +116,13 @@
             margin: 5px 0;
             font-size: 0.9em;
         }
-
-        .logout-btn {
-            margin-top: 15px;
-            padding: 8px 15px;
-            background-color: #e74c3c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .logout-btn:hover {
-            background-color: #c0392b;
-        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="nav-bar">
-        <span>Welcome, User!</span>
+        <span>Welcome, <span id="usernameDisplay">User</span>!</span>
         <div>
             <a href="index.html">Home</a>
             <a href="create-post.html">Create Post</a>
@@ -156,20 +140,20 @@
             <ul class="post-list">
                 <li class="post-item">
                     <span>Post Title 1</span>
-                    <div class="post-actions">
+                    <div>
                         <button>Edit</button>
                         <button>Delete</button>
                     </div>
                 </li>
                 <li class="post-item">
                     <span>Post Title 2</span>
-                    <div class="post-actions">
+                    <div>
                         <button>Edit</button>
                         <button>Delete</button>
                     </div>
                 </li>
             </ul>
-            <button>View All Posts</button>
+            <a href="view-posts.html" class="button">View All Posts</a>
         </div>
 
         <!-- Categories Section -->
@@ -178,35 +162,35 @@
             <ul class="categories-list">
                 <li class="category-item">
                     <span>Lifestyle</span>
-                    <div class="category-actions">
+                    <div>
                         <button>Edit</button>
                         <button>Delete</button>
                     </div>
                 </li>
                 <li class="category-item">
                     <span>Technology</span>
-                    <div class="category-actions">
+                    <div>
                         <button>Edit</button>
                         <button>Delete</button>
                     </div>
                 </li>
             </ul>
-            <button>View All Categories</button>
+            <a href="categories.html" class="button">View All Categories</a>
         </div>
 
         <!-- Settings Section -->
         <div class="box settings">
             <h3>Settings</h3>
-            <button>Change Password</button>
-            <button>Account Privacy</button>
-            <button>Notification Preferences</button>
+            <a href="change-password.html" class="button">Change Password</a>
+            <a href="account_privacy.html" class="button">Account Privacy</a>
+            <a href="notification-preferences.html" class="button">Notification Preferences</a>
         </div>
 
         <!-- User Profile Section -->
         <div class="box user-profile">
             <h3>User Profile</h3>
             <div class="user-info">
-                <h3>User Name</h3>
+                <h3 id="usernameInfo">User Name</h3>
                 <p>Email: user@example.com</p>
                 <p>Joined: January 1, 2024</p>
                 <button class="logout-btn">Log Out</button>
@@ -214,6 +198,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Update username dynamically if changed elsewhere in the application
+    const username = "User"; // Placeholder for actual username
+    document.getElementById("usernameDisplay").innerText = username;
+    document.getElementById("usernameInfo").innerText = username;
+</script>
 
 </body>
 </html>
