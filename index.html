@@ -3,88 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Homepage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 10px;
-        }
-
-        .welcome-info {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .welcome-info h2 {
-            color: #6a0dad; /* Purple accent color */
-        }
-
-        .post {
-            background-color: #fff;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .post h2 {
-            margin-top: 0;
-            color: #ff4500; /* Orange accent color */
-        }
-
-        .post-meta {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .post-preview {
-            color: #444;
-        }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Blogiverse Homepage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
+    <div class="top-right">
+        <a href="login.html">Sign In</a> | 
+        <a href="signup.html">Sign Up</a>
+    </div>
     <h1>Welcome to Blogiverse!</h1>
 </header>
 
+<!-- Social Media Links -->
+<div class="social-links">
+    <a href="https://www.facebook.com/bogiverse.multi.author.blog" target="_blank">Facebook</a> | 
+    <a href="https://www.instagram.com/bogiversem" target="_blank">Instagram</a>
+</div>
+
+<!-- Animated Background -->
+<div class="animated-bg"></div>
+
+<!-- Newsletter Popup -->
+<div id="newsletter-popup" class="popup">
+    <span class="close-btn" onclick="closePopup()">x</span>
+    <h2>Stay Updated!</h2>
+    <p>Would you like to receive the latest notifications via email?</p>
+    <button onclick="showEmailBox()">Yes</button>
+    <div id="email-box" style="display: none;">
+        <input type="email" id="user-email" placeholder="Enter your email">
+        <button onclick="submitEmail()">Send</button>
+    </div>
+</div>
 <div class="container">
     <div class="welcome-info">
         <h2>Join the Conversation!</h2>
@@ -127,18 +78,9 @@
 
     <!-- Add more post entries here in the same structure -->
 </div>
+<!-- Zendesk Widget Placeholder -->
+<div id="zendesk-chat">Zendesk Chat Placeholder</div>
 
-<script>
-    function checkLogin(event) {
-        // Simulate checking if user is logged in
-        const loggedIn = false; // Change this to true if user is logged in
-        if (!loggedIn) {
-            event.preventDefault(); // Prevent default link action
-            window.location.href = 'login.html'; // Redirect to login page
-        }
-        // If loggedIn is true, it will proceed to the post-content.html
-    }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
