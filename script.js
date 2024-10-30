@@ -1,6 +1,4 @@
 function toggleSlideOut() {
-    const slideOut = document.getElementById('slide-out');
+    const slideOut = document.getElementById('slideOut');
     slideOut.classList.toggle('active');
 }
-
-// Add any additional JavaScript functions here
