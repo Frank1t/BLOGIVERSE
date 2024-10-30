@@ -7,122 +7,70 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f5;
-            color: #333;
+            background-color: #f0f0f5; /* Light background for contrast */
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
-        h2 {
-            text-align: center;
-            color: #333;
-            font-size: 2em;
-            margin-top: 0;
+        .dashboard-title {
+            font-family: "Arial Black", sans-serif;
+            color: orange; /* Title color */
+            font-size: 2em; /* Increase font size for visibility */
+            margin-bottom: 20px; /* Space below title */
         }
 
-        .nav-bar {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            background-color: purple; /* Purple background */
-            color: #fff;
+        .welcome-message {
+            animation: shake 0.5s infinite; /* Apply shaking effect */
+            color: #FFD700; /* Gold color for the welcome message */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* 3D effect */
+            font-size: 1.5em; /* Size of the welcome message */
+            margin-bottom: 30px; /* Space below the message */
+        }
+
+        /* Shaking animation */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        /* Container for content */
+        .content {
+            padding: 20px;
+            background-color: #fff; /* White background for content */
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Space below content */
+        }
+
+        /* Navigation Bar Styles */
+        .nav-links {
             margin-bottom: 20px;
         }
 
-        .nav-bar a {
-            color: #fff;
+        .nav-links a {
+            margin-right: 15px;
             text-decoration: none;
-            margin: 0 10px;
+            color: purple; /* Link color */
+            font-weight: bold;
         }
 
-        .notification {
-            background-color: purple; /* Purple background for notifications */
-            color: white;
+        .nav-links a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Notification Banner */
+        .notification-banner {
+            background-color: purple; /* Purple background */
+            color: white; /* White text */
             padding: 10px;
             border-radius: 5px;
-            margin: 10px 0;
+            margin-bottom: 20px;
+            cursor: pointer; /* Pointer cursor for clickability */
         }
 
-        .section {
-            margin-top: 20px;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .box {
-            flex: 1;
-            min-width: 250px;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .box h3 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .post-list, .categories-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .post-item, .category-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            padding: 10px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-        }
-
-        .post-actions, .category-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        button {
-            padding: 5px 10px;
-            border: none;
-            background-color: purple; /* Purple button */
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #6a2c91; /* Darker purple on hover */
-        }
-
-        .logout-btn {
-            margin-top: 15px;
-            padding: 8px 15px;
-            background-color: #e74c3c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .logout-btn:hover {
-            background-color: #c0392b;
-        }
-
+        /* Processing Indicator */
         .processing-indicator {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
@@ -131,103 +79,124 @@
             top: 0;
             width: 100%; /* Full width */
             height: 100%; /* Full height */
-            background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+            background-color: rgba(0, 0, 0, 0.7); /* Fallback color */
             color: white;
             text-align: center;
             padding-top: 20%;
-            font-size: 2em;
+            font-size: 2em; /* Large font size for visibility */
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 10px 15px;
+            background-color: orange; /* Button background */
+            color: white; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .btn:hover {
+            background-color: #ff8c00; /* Darker orange on hover */
         }
     </style>
-    <script>
-        function showProcessingIndicator() {
-            document.getElementById('processing-indicator').style.display = 'block';
-        }
-    </script>
 </head>
 <body>
 
-<div id="processing-indicator" class="processing-indicator">Processing...</div>
+    <div class="dashboard-title">Dashboard</div>
+    <div class="welcome-message">Welcome, User!</div>
+    
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="create-post.html">Create Post</a>
+        <a href="categories.html">Categories</a>
+        <a href="profile.html">Profile</a>
+    </div>
 
-<div class="container">
-    <div class="nav-bar">
-        <span>Welcome, <span id="username">User</span>!</span>
+    <div class="notification-banner" onclick="window.location.href='notification-preferences.html';">
+        You have new notifications!
+    </div>
+
+    <div class="content">
+        <h3>Recent Posts</h3>
         <div>
-            <a href="index.html">Home</a>
-            <a href="create-post.html">Create Post</a>
-            <a href="categories.html">Categories</a>
-            <a href="profile.html">Profile</a>
+            <div>Post Title 1 <button class="btn" onclick="editPost(1)">Edit</button> <button class="btn" onclick="deletePost(1)">Delete</button></div>
+            <div>Post Title 2 <button class="btn" onclick="editPost(2)">Edit</button> <button class="btn" onclick="deletePost(2)">Delete</button></div>
+        </div>
+        <button class="btn" onclick="window.location.href='index.html';">View All Posts</button>
+    </div>
+
+    <div class="content">
+        <h3>Categories</h3>
+        <div>
+            <div>Category 1 <button class="btn" onclick="editCategory(1)">Edit</button> <button class="btn" onclick="deleteCategory(1)">Delete</button></div>
+            <div>Category 2 <button class="btn" onclick="editCategory(2)">Edit</button> <button class="btn" onclick="deleteCategory(2)">Delete</button></div>
         </div>
     </div>
 
-    <h2>Dashboard</h2>
-
-    <!-- Notifications -->
-    <div class="notification">You have new notifications!</div>
-
-    <div class="section">
-        <!-- Recent Posts Section -->
-        <div class="box recent-posts">
-            <h3>Recent Posts</h3>
-            <ul class="post-list">
-                <li class="post-item">
-                    <span>Post Title 1</span>
-                    <div class="post-actions">
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </div>
-                </li>
-                <li class="post-item">
-                    <span>Post Title 2</span>
-                    <div class="post-actions">
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </div>
-                </li>
-            </ul>
-            <button onclick="window.location.href='all-posts.html'">View All Posts</button>
-        </div>
-
-        <!-- Categories Section -->
-        <div class="box categories">
-            <h3>Categories</h3>
-            <ul class="categories-list">
-                <li class="category-item">
-                    <span>Lifestyle</span>
-                    <div class="category-actions">
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </div>
-                </li>
-                <li class="category-item">
-                    <span>Technology</span>
-                    <div class="category-actions">
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </div>
-                </li>
-            </ul>
-            <button onclick="window.location.href='all-categories.html'">View All Categories</button>
-        </div>
-
-        <!-- Settings Section -->
-        <div class="box settings">
-            <h3>Settings</h3>
-            <button onclick="window.location.href='profile.html'">Change Password</button>
-            <button>Notifications</button>
-        </div>
-
-        <!-- User Profile Section -->
-        <div class="box user-profile">
-            <h3>User Profile</h3>
-            <div class="user-info">
-                <h3 id="username">User Name</h3>
-                <p>Email: user@example.com</p>
-                <p>Joined: January 1, 2024</p>
-                <button class="logout-btn" onclick="showProcessingIndicator(); setTimeout(() => { window.location.href='login.html'; }, 2000);">Log Out</button>
-            </div>
-        </div>
+    <div class="content">
+        <h3>Settings</h3>
+        <button class="btn" onclick="window.location.href='profile.html';">Change Password</button>
+        <button class="btn" onclick="window.location.href='profile.html';">Change Theme</button>
+        <button class="btn" onclick="window.location.href='notification-preferences.html';">View Notification Preferences</button>
     </div>
-</div>
+
+    <button class="btn" onclick="logout();">Logout</button>
+
+    <div class="processing-indicator" id="processingIndicator">
+        Processing...
+    </div>
+
+    <script>
+        function showProcessingIndicator() {
+            document.getElementById('processingIndicator').style.display = 'block';
+        }
+
+        function logout() {
+            showProcessingIndicator();
+            setTimeout(() => {
+                window.location.href = 'login.html'; // Redirect to login page
+            }, 1000); // Simulate processing time
+        }
+
+        function editPost(postId) {
+            showProcessingIndicator();
+            // Logic for editing the post
+            setTimeout(() => {
+                // After processing, you can redirect or refresh
+                window.location.href = 'edit-post.html?id=' + postId;
+            }, 1000); // Simulate processing time
+        }
+
+        function deletePost(postId) {
+            showProcessingIndicator();
+            // Logic for deleting the post
+            setTimeout(() => {
+                alert('Post deleted successfully!');
+                // Refresh or redirect after deletion
+                window.location.href = 'index.html'; // Redirect to the home page after deletion
+            }, 1000); // Simulate processing time
+        }
+
+        function editCategory(categoryId) {
+            showProcessingIndicator();
+            // Logic for editing the category
+            setTimeout(() => {
+                window.location.href = 'edit-category.html?id=' + categoryId;
+            }, 1000); // Simulate processing time
+        }
+
+        function deleteCategory(categoryId) {
+            showProcessingIndicator();
+            // Logic for deleting the category
+            setTimeout(() => {
+                alert('Category deleted successfully!');
+                // Refresh or redirect after deletion
+                window.location.href = 'categories.html'; // Redirect to the categories page after deletion
+            }, 1000); // Simulate processing time
+        }
+    </script>
 
 </body>
 </html>
