@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .notification {
+            background-color: #ff9800;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .notification .timestamp {
+            font-size: 0.9em;
+            color: #ffd27f;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Notifications</h2>
+
+    <!-- Sample notifications -->
+    <div class="notification">
+        <strong>New Comment on Your Post</strong>
+        <p>Your post has received a new comment!</p>
+        <span class="timestamp">10 mins ago</span>
+    </div>
+
+    <div class="notification">
+        <strong>Welcome to the Blog Community!</strong>
+        <p>Thank you for joining! Start posting to connect with others.</p>
+        <span class="timestamp">1 day ago</span>
+    </div>
+
+    <div class="notification">
+        <strong>Password Changed Successfully</strong>
+        <p>Your password was updated successfully. If this wasn't you, contact support.</p>
+        <span class="timestamp">2 days ago</span>
+    </div>
+
+    <div class="back-link">
+        <a href="dashboard.html">Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>
