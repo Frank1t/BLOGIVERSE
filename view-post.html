@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .post-meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            margin: 10px 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 5px;
+            font-size: 0.8em;
+        }
+
+        .content {
+            margin-bottom: 30px;
+        }
+
+        .comment-section {
+            margin-top: 40px;
+        }
+
+        .comment {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .comment .author {
+            font-weight: bold;
+        }
+
+        .comment .date {
+            font-size: 0.8em;
+            color: #777;
+        }
+
+        .comment-form {
+            margin-top: 20px;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            resize: none;
+        }
+
+        .comment-form button {
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .comment-form button:hover {
+            background-color: #218838;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .back-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>[Post Title]</h2>
+    <div class="post-meta">
+        <span>By [Author Name]</span> | <span>[Date]</span>
+    </div>
+    
+    <div class="tags">
+        <span class="tag">[Tag 1]</span>
+        <span class="tag">[Tag 2]</span>
+        <span class="tag">[Tag 3]</span>
+    </div>
+
+    <div class="content">
+        <p>[Post Content]</p>
+    </div>
+
+    <div class="comment-section">
+        <h3>Comments</h3>
+        <div id="commentsList">
+            <!-- Existing comments will be populated here -->
+            <div class="comment">
+                <div class="author">John Doe</div>
+                <div class="date">October 29, 2024</div>
+                <div class="text">Great post! Really enjoyed reading it.</div>
+            </div>
+            <div class="comment">
+                <div class="author">Jane Smith</div>
+                <div class="date">October 30, 2024</div>
+                <div class="text">Thanks for sharing your thoughts!</div>
+            </div>
+        </div>
+
+        <div class="comment-form">
+            <h4>Leave a Comment</h4>
+            <textarea id="commentText" placeholder="Write your comment here..."></textarea>
+            <button id="submitComment">Submit Comment</button>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="dashboard.html">Back to Dashboard</a>
+    </div>
+</div>
+
+<script>
+    // Mock data: Replace with actual post data from the server
+    const post = {
+        title: "[Post Title]",
+        author: "[Author Name]",
+        date: "[Date]",
+        content: "[Post Content]",
+        tags: ["[Tag 1]", "[Tag 2]", "[Tag 3]"]
+    };
+
+    // Populate post details
+    document.querySelector("h2").innerText = post.title;
+    document.querySelector(".post-meta span").innerText = `By ${post.author} | ${post.date}`;
+    document.querySelector(".content p").innerText = post.content;
+
+    // Populate tags
+    const tagsContainer = document.querySelector(".tags");
+    post.tags.forEach(tag => {
+        const tagElement = document.createElement("span");
+        tagElement.className = "tag";
+        tagElement.innerText = tag;
+        tagsContainer.appendChild(tagElement);
+    });
+
+    // Handle comment submission
+    document.getElementById("submitComment").addEventListener("click", function() {
+        const commentText = document.getElementById("commentText").value;
+        if (commentText) {
+            const newComment = document.createElement("div");
+            newComment.className = "comment";
+            newComment.innerHTML = `
+                <div class="author">You</div>
+                <div class="date">${new Date().toLocaleDateString()}</div>
+                <div class="text">${commentText}</div>
+            `;
+            document.getElementById("commentsList").appendChild(newComment);
+            document.getElementById("commentText").value = ""; // Clear the textarea
+        } else {
+            alert("Please write a comment before submitting.");
+        }
+    });
+</script>
+
+</body>
+</html>
