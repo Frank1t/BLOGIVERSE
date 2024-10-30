@@ -57,17 +57,38 @@
             text-decoration: underline;
         }
 
-        /* Create Post section styles */
-        .create-post-section {
+        /* Comment section styles */
+        .comments-section {
             margin-top: 40px;
         }
 
-        .add-post-form {
+        .comment {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comment .comment-author {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .comment .comment-date {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .comment .comment-content {
+            margin-top: 10px;
+            color: #444;
+        }
+
+        .add-comment-form {
             margin-top: 30px;
         }
 
-        .add-post-form input[type="text"],
-        .add-post-form textarea {
+        .add-comment-form input[type="text"],
+        .add-comment-form input[type="email"],
+        .add-comment-form textarea {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -76,12 +97,12 @@
             font-size: 1em;
         }
 
-        .add-post-form textarea {
+        .add-comment-form textarea {
             resize: vertical;
             min-height: 100px;
         }
 
-        .submit-post-btn {
+        .submit-comment-btn {
             padding: 10px 20px;
             background-color: #0066cc;
             color: #fff;
@@ -92,7 +113,7 @@
             margin-top: 10px;
         }
 
-        .submit-post-btn:hover {
+        .submit-comment-btn:hover {
             background-color: #005bb5;
         }
     </style>
@@ -110,21 +131,44 @@
     <a href="index.html" class="back-link">Back to Homepage</a>
 
     <!-- Create Post Section -->
-    <div class="create-post-section">
-        <h3>Create Post</h3>
-        <div class="add-post-form">
-            <form action="/create-post" method="POST">
-                <label for="post-title">Post Title</label>
-                <input type="text" id="post-title" name="post-title" required>
+    <div class="add-comment-form">
+        <h4>Create Post</h4>
+        <form action="index.html" method="GET" onsubmit="return submitPost()">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required>
 
-                <label for="post-content">Write Up</label>
-                <textarea id="post-content" name="post-content" required></textarea>
+            <label for="title">Post Title</label>
+            <input type="text" id="title" name="title" required>
 
-                <button type="submit" class="submit-post-btn">Submit Post</button>
-            </form>
+            <label for="content">Content</label>
+            <textarea id="content" name="content" required></textarea>
+
+            <button type="submit" class="submit-comment-btn">Submit Post</button>
+        </form>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+        <h3>Comments</h3>
+
+        <!-- Existing Comments -->
+        <div class="comment">
+            <div class="comment-author">John Doe</div>
+            <div class="comment-date">October 29, 2024</div>
+            <div class="comment-content">This is an example comment. I really enjoyed reading this post!</div>
         </div>
+        <!-- More comments can be added here as needed -->
     </div>
 </div>
+
+<script>
+    function submitPost() {
+        // Here you can add functionality to save the post before redirecting
+        // For demonstration, we're simply redirecting to the home page.
+        window.location.href = 'index.html';
+        return false; // Prevent actual form submission for demo
+    }
+</script>
 
 </body>
 </html>
