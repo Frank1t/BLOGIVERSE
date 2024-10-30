@@ -15,7 +15,7 @@
 
         .container {
             width: 90%;
-            max-width: 600px;
+            max-width: 700px;
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
@@ -28,10 +28,35 @@
             color: #333;
         }
 
+        .profile-picture {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #ff9800;
+        }
+
+        .upload-btn {
+            display: block;
+            margin: 10px auto;
+            background-color: #ff9800;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         label {
             display: block;
             margin-top: 10px;
             font-weight: bold;
+            color: #ff9800;
         }
 
         input[type="text"],
@@ -40,8 +65,9 @@
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #ff9800;
             border-radius: 5px;
+            color: #333;
         }
 
         .button {
@@ -72,12 +98,37 @@
         .back-link a:hover {
             text-decoration: underline;
         }
+
+        .user-posts {
+            margin-top: 30px;
+        }
+
+        .user-posts h3 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .post {
+            background-color: #ff9800;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h2>User Profile</h2>
+
+    <!-- Profile Picture Section -->
+    <div class="profile-picture">
+        <img src="profile-placeholder.png" alt="Profile Picture" id="profilePic">
+    </div>
+    <input type="file" id="uploadPic" class="upload-btn" accept="image/*" onchange="previewImage(event)">
+    
     <form id="profileForm">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" value="[Current Username]" required>
@@ -91,17 +142,30 @@
         <button type="submit" class="button">Update Profile</button>
     </form>
 
+    <div class="user-posts">
+        <h3>Your Posts</h3>
+        <!-- Example posts - dynamically loaded in practice -->
+        <div class="post">Post Title 1 - Short description...</div>
+        <div class="post">Post Title 2 - Short description...</div>
+    </div>
+
     <div class="back-link">
         <a href="dashboard.html">Back to Dashboard</a>
     </div>
 </div>
 
 <script>
+    // Profile picture preview
+    function previewImage(event) {
+        const profilePic = document.getElementById('profilePic');
+        profilePic.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    // Simulate form submission
     document.getElementById('profileForm').onsubmit = function(event) {
         event.preventDefault();
-        // Simulate profile update logic
         alert('Profile updated successfully!');
-        // Here, you would typically make an AJAX request to update the profile on the server.
+        // Add AJAX request for real server-side update
     };
 </script>
 
