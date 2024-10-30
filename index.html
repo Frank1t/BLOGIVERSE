@@ -40,17 +40,11 @@
             margin-bottom: 20px;
         }
 
-        .welcome-info h2 {
+        .welcome-info h2,
+        .welcome-info h3 {
             color: white;
             background-color: #6a0dad; /* Purple background for heading */
             padding: 10px;
-            border-radius: 5px;
-        }
-
-        .welcome-info h3 {
-            color: white;
-            background-color: #6a0dad; /* Purple background for sub-headings */
-            padding: 5px;
             border-radius: 5px;
         }
 
@@ -141,13 +135,32 @@
         .read-more:hover {
             text-decoration: underline;
         }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: inline-block;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Welcome to Blogiverse!</h1>
-    <button id="toggle-slide" onclick="toggleSlideOut()">Sign In / Sign Up</button>
+    <div class="hamburger" onclick="toggleSlideOut()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 
 <div class="container">
@@ -182,30 +195,34 @@
         </div>
     </div>
 
-
-    <!-- Slide-Out for Sign In / Sign Up -->
-    <div class="slide-out" id="slide-out">
-        <button class="close-btn" onclick="toggleSlideOut()">&times;</button>
-        <h2>Sign In / Sign Up</h2>
-        <a href="login.html" class="redirect-btn">Sign In</a>
-        <a href="signup.html" class="redirect-btn">Sign Up</a>
+    <!-- Sample Blog Post -->
+    <div class="post">
+        <h2>Post Title 1</h2>
+        <div class="post-meta">Posted on <span>October 30, 2024</span> by <span>Author Name</span></div>
+        <p class="post-preview">This is a short preview of the post content. The full content can be read by clicking on the link below.</p>
+        <a href="post-content.html" class="read-more">Read More</a>
     </div>
 </div>
 
-<script>
-    function checkLogin(event) {
-        const loggedIn = false; // Change this to true if user is logged in
-        if (!loggedIn) {
-            event.preventDefault(); // Prevent default link action
-            window.location.href = 'login.html'; // Redirect to login page
-        }
-    }
+<!-- Slide-out Menu -->
+<div class="slide-out" id="slideOutMenu">
+    <button class="close-btn" onclick="toggleSlideOut()">×</button>
+    <h2>Sign In / Sign Up</h2>
+    <form id="authForm">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="redirect-btn">Sign In</button>
+    </form>
+    <p>or</p>
+    <button class="redirect-btn">Sign Up</button>
+</div>
 
+<script>
     function toggleSlideOut() {
-        const slideOut = document.getElementById('slide-out');
+        const slideOut = document.getElementById('slideOutMenu');
         slideOut.classList.toggle('active');
     }
 </script>
 
 </body>
-</html>
+    </html>
