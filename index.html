@@ -3,70 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogiverse - Welcome Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <title>Welcome to Blogiverse!</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
 </head>
 <body>
 
 <header>
     <h1>Welcome to Blogiverse!</h1>
-    <button id="toggle-slide" onclick="toggleSlideOut()" class="menu-icon">&#9776;</button> <!-- Hamburger icon -->
+    <div class="sign-in-up">
+        <button onclick="toggleSlideOut()">Sign In / Sign Up</button>
+    </div>
 </header>
 
 <div class="container">
     <div class="welcome-info">
-        <h2 style="color: white;">Join the Conversation!</h2>
+        <h2>Join the Conversation!</h2>
         <p>Blogiverse is a vibrant community of writers, thinkers, and creatives sharing insights, experiences, and expertise.</p>
-        
-        <h3 style="color: white;">What to Expect:</h3>
-        <ul>
-            <li>Original content from talented authors</li>
-            <li>Thought-provoking articles, stories, and opinions</li>
-            <li>Engaging discussions and debates</li>
-            <li>A safe, respectful, and inclusive environment</li>
-        </ul>
-
-        <h3 style="color: white;">Get Started:</h3>
-        <ul>
-            <li>Browse our categories: Lifestyle, Technology, Travel, Food, Fashion, and more</li>
-            <li>Search for topics that interest you</li>
-            <li>Register to become an author and share your voice</li>
-            <li>Follow us on social media</li>
-        </ul>
-
-        <h3 style="color: white;">Our Mission:</h3>
-        <p>Blogiverse aims to provide a platform for diverse voices, foster meaningful connections, and inspire creativity.</p>
-
-        <h3 style="color: white;">Connect with Us:</h3>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/bogiverse.multi.author.blog" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/bogiversem?igsh=YTVhaG0yNTJycnVk" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:blogiverse324@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        </div>
     </div>
 
-    <!-- Slide-Out for Sign In / Sign Up -->
-    <div class="slide-out" id="slide-out">
-        <button class="close-btn" onclick="toggleSlideOut()">&times;</button>
-        <h2>Sign In / Sign Up</h2>
-        <form>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><img src="facebook-logo.png" alt="Facebook Logo"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="instagram-logo.png" alt="Instagram Logo"></a>
+        <a href="mailto:your-email@example.com" target="_blank"><img src="gmail-logo.png" alt="Gmail Logo"></a>
+    </div>
+
+    <div class="contact-info">
+        <p>Contact us at: <a href="mailto:blogiverse324@gmail.com">blogiverse324@gmail.com</a></p>
     </div>
 </div>
 
-<script src="script.js"></script> <!-- External JavaScript -->
-<script>
-    function toggleSlideOut() {
-        const slideOut = document.getElementById('slide-out');
-        slideOut.classList.toggle('active');
-    }
-</script>
+<div class="slide-out" id="slideOut">
+    <span class="close-btn" onclick="toggleSlideOut()">×</span>
+    <h2>Sign In / Sign Up</h2>
+    <p>You will be redirected to the login or sign-up page.</p>
+    <ul>
+        <li><a href="login.html">Sign In</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+    </ul>
+</div>
 
+<script src="script.js"></script> <!-- Link to JavaScript -->
 </body>
 </html>
