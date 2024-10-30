@@ -57,38 +57,17 @@
             text-decoration: underline;
         }
 
-        /* Comment section styles */
-        .comments-section {
+        /* Create Post section styles */
+        .create-post-section {
             margin-top: 40px;
         }
 
-        .comment {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .comment .comment-author {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .comment .comment-date {
-            font-size: 0.8em;
-            color: #666;
-        }
-
-        .comment .comment-content {
-            margin-top: 10px;
-            color: #444;
-        }
-
-        .add-comment-form {
+        .add-post-form {
             margin-top: 30px;
         }
 
-        .add-comment-form input[type="text"],
-        .add-comment-form input[type="email"],
-        .add-comment-form textarea {
+        .add-post-form input[type="text"],
+        .add-post-form textarea {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -97,12 +76,12 @@
             font-size: 1em;
         }
 
-        .add-comment-form textarea {
+        .add-post-form textarea {
             resize: vertical;
             min-height: 100px;
         }
 
-        .submit-comment-btn {
+        .submit-post-btn {
             padding: 10px 20px;
             background-color: #0066cc;
             color: #fff;
@@ -113,7 +92,7 @@
             margin-top: 10px;
         }
 
-        .submit-comment-btn:hover {
+        .submit-post-btn:hover {
             background-color: #005bb5;
         }
     </style>
@@ -130,32 +109,18 @@
     <div class="post-tags">Tags: Lifestyle, Travel, Food</div>
     <a href="index.html" class="back-link">Back to Homepage</a>
 
-    <!-- Comment Section -->
-    <div class="comments-section">
-        <h3>Comments</h3>
+    <!-- Create Post Section -->
+    <div class="create-post-section">
+        <h3>Create Post</h3>
+        <div class="add-post-form">
+            <form action="/create-post" method="POST">
+                <label for="post-title">Post Title</label>
+                <input type="text" id="post-title" name="post-title" required>
 
-        <!-- Existing Comments -->
-        <div class="comment">
-            <div class="comment-author">John Doe</div>
-            <div class="comment-date">October 29, 2024</div>
-            <div class="comment-content">This is an example comment. I really enjoyed reading this post!</div>
-        </div>
-        <!-- More comments can be added here as needed -->
+                <label for="post-content">Write Up</label>
+                <textarea id="post-content" name="post-content" required></textarea>
 
-        <!-- Add Comment Form -->
-        <div class="add-comment-form">
-            <h4>Leave a Comment</h4>
-            <form action="/post-comment" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="comment">Comment</label>
-                <textarea id="comment" name="comment" required></textarea>
-
-                <button type="submit" class="submit-comment-btn">Post Comment</button>
+                <button type="submit" class="submit-post-btn">Submit Post</button>
             </form>
         </div>
     </div>
