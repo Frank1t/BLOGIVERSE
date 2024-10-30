@@ -39,6 +39,10 @@
             margin-bottom: 20px;
         }
 
+        .welcome-info h2 {
+            color: #6a0dad; /* Purple accent color */
+        }
+
         .post {
             background-color: #fff;
             margin-bottom: 20px;
@@ -49,6 +53,7 @@
 
         .post h2 {
             margin-top: 0;
+            color: #ff4500; /* Orange accent color */
         }
 
         .post-meta {
@@ -110,9 +115,6 @@
             <li>Social Media: [Links to social media]</li>
             <li>Newsletter: [Signup link]</li>
         </ul>
-
-        <h2>Join the Conversation!</h2>
-        <p>Leave a comment, share a post, or submit your writing. We're excited to have you as part of our community!</p>
     </div>
 
     <!-- Sample Blog Post -->
@@ -120,11 +122,23 @@
         <h2>Post Title 1</h2>
         <div class="post-meta">Posted on <span>October 30, 2024</span> by <span>Author Name</span></div>
         <p class="post-preview">This is a short preview of the post content. The full content can be read by clicking on the link below.</p>
-        <a href="#" class="read-more">Read More</a>
+        <a href="post-content.html" class="read-more" onclick="checkLogin(event)">Read More</a>
     </div>
 
     <!-- Add more post entries here in the same structure -->
 </div>
+
+<script>
+    function checkLogin(event) {
+        // Simulate checking if user is logged in
+        const loggedIn = false; // Change this to true if user is logged in
+        if (!loggedIn) {
+            event.preventDefault(); // Prevent default link action
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+        // If loggedIn is true, it will proceed to the post-content.html
+    }
+</script>
 
 </body>
 </html>
