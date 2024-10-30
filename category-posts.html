@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .post {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .post:hover {
+            background-color: #f9f9f9;
+        }
+
+        .post-title {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .post-meta {
+            color: gray;
+            font-size: 0.9em;
+        }
+
+        .post-content {
+            margin-top: 10px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Posts in [Category Name]</h2>
+
+    <div class="post">
+        <h3 class="post-title">Post Title 1</h3>
+        <div class="post-meta">By Author | Date: YYYY-MM-DD | Tags: Tag1, Tag2</div>
+        <div class="post-content">
+            <p>This is a brief excerpt from the post content. Click to read more...</p>
+            <a href="post.html?id=1">Read More</a>
+        </div>
+    </div>
+
+    <div class="post">
+        <h3 class="post-title">Post Title 2</h3>
+        <div class="post-meta">By Author | Date: YYYY-MM-DD | Tags: Tag1, Tag2</div>
+        <div class="post-content">
+            <p>This is a brief excerpt from the post content. Click to read more...</p>
+            <a href="post.html?id=2">Read More</a>
+        </div>
+    </div>
+
+    <div class="post">
+        <h3 class="post-title">Post Title 3</h3>
+        <div class="post-meta">By Author | Date: YYYY-MM-DD | Tags: Tag1, Tag2</div>
+        <div class="post-content">
+            <p>This is a brief excerpt from the post content. Click to read more...</p>
+            <a href="post.html?id=3">Read More</a>
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="categories.html">Back to Categories</a>
+    </div>
+</div>
+
+</body>
+</html>
