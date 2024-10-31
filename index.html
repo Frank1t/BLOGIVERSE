@@ -3,52 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Blogiverse!</title>
+    <title>Welcome to Blogiverse</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Blogiverse!</h1>
-        <div class="hamburger" onclick="toggleSlideOut()">&#9776;</div>
-    </header>
 
-    <div class="container">
-        <div class="welcome-info">
-            <h2>Join the Conversation!</h2>
-            <p>Blogiverse is a vibrant community of writers, thinkers, and creatives sharing insights, experiences, and expertise.</p>
-            <h3>What to Expect:</h3>
-            <ul>
-                <li>Original content from talented authors</li>
-                <li>Thought-provoking articles, stories, and opinions</li>
-                <li>Engaging discussions and debates</li>
-                <li>A safe, respectful, and inclusive environment</li>
-            </ul>
-            <h3>Connect with Us:</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="facebook-logo.png" alt="Facebook">
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="instagram-logo.png" alt="Instagram">
-                </a>
-                <a href="mailto:blogiverse324@gmail.com">
-                    <img src="gmail-logo.png" alt="Gmail">
-                </a>
-            </div>
-            <div class="contact-info">
-                <p>Contact: <a href="mailto:blogiverse324@gmail.com">blogiverse324@gmail.com</a></p>
-            </div>
+<header>
+    <h1>Welcome to Blogiverse!</h1>
+    <div class="hamburger" onclick="toggleSlideOut()">
+        &#9776;
+    </div>
+</header>
+
+<div class="container">
+    <div class="welcome-info">
+        <h2>Join the Conversation!</h2>
+        <p>Blogiverse is a vibrant community of writers, thinkers, and creatives sharing insights, experiences, and expertise.</p>
+        
+        <h3>What to Expect:</h3>
+        <ul>
+            <li>Original content from talented authors</li>
+            <li>Thought-provoking articles, stories, and opinions</li>
+            <li>Engaging discussions and debates</li>
+            <li>A safe, respectful, and inclusive environment</li>
+        </ul>
+
+        <h3>Get Started:</h3>
+        <ul>
+            <li>Browse our categories: Lifestyle, Technology, Travel, Food, Fashion, and more</li>
+            <li>Search for topics that interest you</li>
+            <li>Register to become an author and share your voice</li>
+            <li>Follow us on social media</li>
+        </ul>
+
+        <h3>Our Mission:</h3>
+        <p>Blogiverse aims to provide a platform for diverse voices, foster meaningful connections, and inspire creativity.</p>
+
+        <h3>Connect with Us:</h3>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">
+                <img src="facebook-logo.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="instagram-logo.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="mailto:blogiverse324@gmail.com" target="_blank">
+                <img src="gmail-logo.png" alt="Gmail" class="social-icon">
+            </a>
         </div>
     </div>
+</div>
 
-    <div class="slide-out" id="slide-out">
-        <span class="close-btn" onclick="toggleSlideOut()">X</span>
-        <h2>Sign In / Sign Up</h2>
-        <p>You will be redirected to the respective page.</p>
-        <button onclick="redirectTo('login.html')">Sign In</button>
-        <button onclick="redirectTo('signup.html')">Sign Up</button>
+<div class="slide-out" id="slideOut">
+    <div class="close-btn" onclick="toggleSlideOut()">X</div>
+    <div class="slide-out-content">
+        <a href="login.html">Sign In</a>
+        <a href="signup.html">Sign Up</a>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
